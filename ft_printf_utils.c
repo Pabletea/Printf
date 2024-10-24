@@ -6,7 +6,7 @@
 /*   By: pabalons <pabalons@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 08:26:13 by pabalons          #+#    #+#             */
-/*   Updated: 2024/10/23 13:13:09 by pabalons         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:31:19 by pabalons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	if (!s)
-		return;
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

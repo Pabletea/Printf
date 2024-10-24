@@ -6,7 +6,7 @@
 /*   By: pabalons <pabalons@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 07:52:00 by pabalons          #+#    #+#             */
-/*   Updated: 2024/10/23 12:49:21 by pabalons         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:31:43 by pabalons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -30,5 +31,7 @@ int		ft_printf_int(int i);
 int		ft_printf_unsigned_int(unsigned int n);
 int		ft_print_hex_lower(unsigned int num);
 int		ft_print_hex_upper(unsigned int num);
+int		ft_print_hex(unsigned int num, char format);
+int		ft_printf_pointer(void *ptr);
 
 #endif

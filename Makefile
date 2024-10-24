@@ -1,4 +1,5 @@
 NAME = libftprintf.a
+EXE = test_program
 
 CC = cc
 
@@ -9,7 +10,9 @@ SRC = ft_printf.c \
 	ft_printf_char.c \
 	ft_printf_str.c \
 	ft_printf_int.c \
-	ft_printf_hex.c
+	ft_printf_hex.c \
+	ft_printf_pointer.c \
+	ft_printf_unsigned_int.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -20,11 +23,18 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+# Regla para compilar el ejecutable
+$(EXE): $(NAME) main.o
+	$(CC) $(FLAGS) -o $(EXE) main.o -L. -lftprintf
+
+main.o: main.c
+	$(CC) $(FLAGS) -c main.c
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) main.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(EXE)
 
 re: fclean all
 

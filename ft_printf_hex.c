@@ -6,11 +6,22 @@
 /*   By: pabalons <pabalons@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 12:34:17 by pabalons          #+#    #+#             */
-/*   Updated: 2024/10/23 12:49:05 by pabalons         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:31:57 by pabalons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_print_hex_lower(unsigned int num);
+int	ft_print_hex_upper(unsigned int num);
+
+int	ft_print_hex(unsigned int num, char format)
+{
+	if (format == 'X')
+		return (ft_print_hex_upper(num));
+	else
+		return (ft_print_hex_lower(num));
+}
 
 int	ft_print_hex_lower(unsigned int num)
 {
@@ -37,6 +48,7 @@ int	ft_print_hex_lower(unsigned int num)
 	write(1, &buffer[i + 1], char_count);
 	return (char_count);
 }
+
 int	ft_print_hex_upper(unsigned int num)
 {
 	char	*hex_digits;
@@ -62,4 +74,3 @@ int	ft_print_hex_upper(unsigned int num)
 	write(1, &buffer[i + 1], char_count);
 	return (char_count);
 }
-
